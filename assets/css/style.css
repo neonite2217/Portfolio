@@ -1,20 +1,3 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
 
   /**
@@ -111,9 +94,349 @@
 
 }
 
+/* Light Theme Variables */
+[data-theme="light"] {
+  /* Primary Colors */
+  --cyan: #00FFFF;
+  --turquoise: #00CED1;
+  --turquoise-light: #40E0D0;
+  --peacock: #1ABC9C;
+  --teal: #008B8B;
+  --teal-light: #20B2AA;
+  --aqua-light: #E0F7FA;
+  --aqua: #B2EBF2;
+  --aqua-medium: #80DEEA;
+  --aqua-dark: #4DD0E1;
+  
+  /* Override dark theme colors with light theme */
+  --bg-gradient-onyx: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 50%, #E1F5FE 100%);
+  --bg-gradient-jet: linear-gradient(135deg, rgba(224, 247, 250, 0.7) 0%, rgba(178, 235, 242, 0.5) 100%), #F8F9FA;
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, var(--turquoise) 0%, var(--aqua-light) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, var(--turquoise-light) 0%, var(--aqua) 100%);
+  --border-gradient-onyx: linear-gradient(to bottom right, var(--aqua-medium) 0%, var(--aqua-light) 50%);
+  --text-gradient-yellow: linear-gradient(to right, var(--turquoise), var(--teal-light));
+  
+  /* Solid colors for light theme */
+  --jet: rgba(255, 255, 255, 0.95);
+  --onyx: rgba(255, 255, 255, 0.9);
+  --eerie-black-1: #F8F9FA;
+  --eerie-black-2: #FFFFFF;
+  --smoky-black: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 50%, #E1F5FE 100%);
+  --white-1: #004D4D;
+  --white-2: #006666;
+  --orange-yellow-crayola: var(--turquoise);
+  --vegas-gold: var(--teal-light);
+  --light-gray: #006064;
+  --light-gray-70: rgba(0, 96, 100, 0.7);
+  --bittersweet-shimmer: var(--peacock);
+  
+  /* Light theme shadows */
+  --shadow-1: 0 4px 12px rgba(0, 206, 209, 0.2);
+  --shadow-2: 0 8px 20px rgba(0, 206, 209, 0.25);
+  --shadow-3: 0 12px 30px rgba(0, 206, 209, 0.3);
+  --shadow-4: 0 16px 40px rgba(0, 206, 209, 0.2);
+  --shadow-5: 0 20px 60px rgba(0, 206, 209, 0.35);
+}
 
+/* Theme Toggle Styles */
+.title-with-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
 
+.themeToggle {
+  color: var(--light-gray);
+  width: 1.8em;
+  height: 1.8em;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.st-sunMoonThemeToggleBtn {
+  position: relative;
+  cursor: pointer;
+}
+
+.st-sunMoonThemeToggleBtn .themeToggleInput {
+  opacity: 0;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.st-sunMoonThemeToggleBtn svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(40deg);
+  width: 85%;
+  height: 85%;
+  transition: transform 0.4s ease;
+}
+
+.st-sunMoonThemeToggleBtn svg .sunMoon {
+  transform-origin: center center;
+  transition: inherit;
+  transform: scale(1);
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay {
+  transform-origin: center center;
+  transform: scale(0);
+}
+
+.st-sunMoonThemeToggleBtn svg mask > circle {
+  transition: transform 0.64s cubic-bezier(0.41, 0.64, 0.32, 1.575);
+  transform: translate(0px, 0px);
+}
+
+.st-sunMoonThemeToggleBtn svg .sunRay2 {
+  animation-delay: 0.05s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay3 {
+  animation-delay: 0.1s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay4 {
+  animation-delay: 0.17s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay5 {
+  animation-delay: 0.25s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay6 {
+  animation-delay: 0.29s !important;
+}
+
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Improve overall spacing and alignment */
+.info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.name {
+  margin: 0;
+  text-align: center;
+}
+
+.title-with-theme .title {
+  margin: 0;
+  text-align: center;
+}
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg mask > circle {
+  transform: translate(16px, -3px);
+}
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunMoon {
+  transform: scale(0.55);
+}
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunRay {
+  animation: showRay1832 0.4s ease 0s 1 forwards;
+}
+
+@keyframes showRay1832 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Enhanced Responsive Design */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .title-with-theme {
+    gap: 10px;
+  }
+  
+  .themeToggle {
+    width: 1.6em;
+    height: 1.6em;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .title-with-theme {
+    gap: 8px;
+  }
+  
+  .themeToggle {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  
+  /* Make sidebar more responsive */
+  .sidebar {
+    max-width: 100%;
+  }
+  
+  .info-content {
+    text-align: center;
+  }
+  
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .title {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 580px) {
+  .title-with-theme {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .themeToggle {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  
+  .name {
+    font-size: 1.6rem;
+  }
+  
+  .title {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  .title-with-theme {
+    gap: 6px;
+  }
+  
+  .themeToggle {
+    width: 1.3em;
+    height: 1.3em;
+  }
+  
+  .name {
+    font-size: 1.4rem;
+  }
+  
+  .title {
+    font-size: 0.8rem;
+  }
+  
+  /* Improve content card responsiveness */
+  .content-card {
+    padding: 12px;
+    padding-top: 35px;
+  }
+  
+  /* Make navbar more responsive */
+  .navbar-link {
+    padding: 15px 5px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .title-with-theme {
+    gap: 5px;
+  }
+  
+  .themeToggle {
+    width: 1.2em;
+    height: 1.2em;
+  }
+  
+  .name {
+    font-size: 1.2rem;
+  }
+  
+  .title {
+    font-size: 0.75rem;
+  }
+}
+
+/* Additional responsive improvements */
+@media (max-width: 768px) {
+  /* Improve testimonials list responsiveness */
+  .testimonials-list {
+    gap: 15px;
+  }
+  
+  .testimonials-item {
+    min-width: 280px;
+  }
+  
+  /* Better spacing for sections */
+  .testimonials {
+    margin-bottom: 25px;
+  }
+  
+  /* Improve article titles */
+  .article-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Better button responsiveness */
+  .container {
+    margin-top: 12px;
+  }
+  
+  .label {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further improve small screen experience */
+  .testimonials-item {
+    min-width: 260px;
+  }
+  
+  .article-title {
+    font-size: 1.3rem;
+  }
+  
+  .testimonials-title {
+    font-size: 1.1rem;
+  }
+  
+  .label {
+    width: 130px;
+  }
+  
+  .label .title {
+    font-size: 15px;
+  }
+}
+
+/* Improve light mode responsiveness */
+[data-theme="light"] .content-card:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  [data-theme="light"] .content-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 206, 209, 0.25), 0 0 15px rgba(64, 224, 208, 0.15);
+  }
+  
+  [data-theme="light"] .testimonials-item:hover .content-card {
+    transform: translateY(-2px) scale(1.01);
+  }
+}
 
 /*-----------------------------------*\
   #RESET
@@ -290,6 +613,39 @@ article.active {
   background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
+}
+
+/* Light mode glow effects for content cards */
+[data-theme="light"] .content-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 206, 209, 0.3), 0 0 20px rgba(64, 224, 208, 0.2);
+  border: 1px solid var(--turquoise-light);
+}
+
+[data-theme="light"] .testimonials-title:hover {
+  color: var(--teal-light);
+  text-shadow: 0 0 10px rgba(32, 178, 170, 0.6);
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+/* Additional light mode glow effects */
+[data-theme="light"] .article-title:hover {
+  color: var(--turquoise);
+  text-shadow: 0 0 15px rgba(0, 206, 209, 0.7);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .testimonials-item:hover .content-card {
+  box-shadow: 0 10px 30px rgba(0, 206, 209, 0.4), 0 0 25px rgba(64, 224, 208, 0.3);
+  transform: translateY(-5px) scale(1.02);
+}
+
+[data-theme="light"] .info_more-btn:hover {
+  background: linear-gradient(135deg, var(--turquoise-light), var(--aqua-dark));
+  box-shadow: 0 5px 15px rgba(0, 206, 209, 0.4);
+  transform: translateY(-2px);
 }
 
 
@@ -486,6 +842,18 @@ main {
 .navbar-link:focus { color: var(--light-gray-70); }
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
+
+/* Light mode glow effects for navbar */
+[data-theme="light"] .navbar-link:hover {
+  color: var(--turquoise);
+  text-shadow: 0 0 8px rgba(0, 206, 209, 0.6);
+  transform: translateY(-1px);
+}
+
+[data-theme="light"] .navbar-link.active {
+  color: var(--teal-light);
+  text-shadow: 0 0 12px rgba(32, 178, 170, 0.8);
+}
 
 
 

@@ -30,7 +30,28 @@
         <div class="info-content">
           <h1 class="name" title="Biswaketan">Biswaketan</h1>
 
-          <p class="title">Developer</p>
+          <div class="title-with-theme">
+            <p class="title">Developer</p>
+            <!-- Theme Toggle Button -->
+            <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn" type="checkbox">
+              <input type="checkbox" id="themeToggle" class="themeToggleInput" />
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
+                <mask id="moon-mask">
+                  <rect x="0" y="0" width="20" height="20" fill="white"></rect>
+                  <circle cx="11" cy="3" r="8" fill="black"></circle>
+                </mask>
+                <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
+                <g>
+                  <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
+                  <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
+                  <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
+                  <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
+                  <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
+                  <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
+                </g>
+              </svg>
+            </label>
+          </div>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -70,7 +91,7 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+91 9090067554" class="contact-link">+91 9090067554</a>
+              <a href="https://wa.me/919090067554" class="contact-link" target="_blank">+91 9090067554</a>
             </div>
 
           </li>
@@ -177,13 +198,21 @@
 
         <section class="about-text">
           <p>
-            I'm Biswaketan, known as neonite in the open-source community. A curious and driven developer with a strong interest in cloud computing, data analysis, AI/ML, and cybersecurity. I enjoy exploring new technologies, solving problems, and building practical solutions that can scale.
+            I'm Biswaketan, known as neonite in the open-source community. A curious and driven developer with a strong
+            interest in cloud computing, data analysis, AI/ML, and cybersecurity. I enjoy exploring new technologies,
+            solving problems, and building practical solutions that can scale.
           </p>
           <p>
-          I have hands-on experience with cloud infrastructure, offensive security, machine learning, and full-stack development through projects, open-source contributions, and hackathons. I’m comfortable working with multiple programming languages, cloud platforms, and modern frameworks, and I’m continuously learning to deepen my knowledge and apply it in real-world scenarios.
+            I have hands-on experience with cloud infrastructure, offensive security, machine learning, and full-stack
+            development through projects, open-source contributions, and hackathons. I’m comfortable working with
+            multiple programming languages, cloud platforms, and modern frameworks, and I’m continuously learning to
+            deepen my knowledge and apply it in real-world scenarios.
           </p>
           <p>
-            Through projects, open-source contributions, and hackathons, I’ve gained hands-on experience across programming, data analysis, cloud platforms, and modern development frameworks. I’m comfortable working with multiple programming languages and tools, and I’m always eager to learn, adapt, and apply my skills in diverse areas of technology.
+            Through projects, open-source contributions, and hackathons, I’ve gained hands-on experience across
+            programming, data analysis, cloud platforms, and modern development frameworks. I’m comfortable working with
+            multiple programming languages and tools, and I’m always eager to learn, adapt, and apply my skills in
+            diverse areas of technology.
           </p>
         </section>
 
@@ -219,7 +248,8 @@
               <span>2023 — 2026(Expected)</span>
               <p class="timeline-text">
                 Specialized in Computer Science and Engineering with focus on cybersecurity, cloud computing, and
-                software development. Graduating with distinction and actively participated in various technical projects
+                software development. Graduating with distinction and actively participated in various technical
+                projects
                 and hackathons.
               </p>
             </li>
@@ -259,10 +289,21 @@
                 <p class="resume-card-text">
                   Optimized for Applicant Tracking Systems with clean formatting and keyword optimization.
                 </p>
-                <button class="resume-download-btn" onclick="downloadResume('ats')">
-                  <ion-icon name="document-text-outline"></ion-icon>
-                  <span>Download ATS Resume</span>
-                </button>
+                <div class="container">
+                  <label class="label" onclick="downloadResume('ats')">
+                    <input type="checkbox" class="input" />
+                    <span class="circle">
+                      <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                      </svg>
+                      <div class="square"></div>
+                    </span>
+                    <p class="title">Download</p>
+                    <p class="title">Open</p>
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -275,10 +316,21 @@
                 <p class="resume-card-text">
                   Beautifully designed version with enhanced visual appeal for human reviewers.
                 </p>
-                <button class="resume-download-btn" onclick="downloadResume('human')">
-                  <ion-icon name="eye-outline"></ion-icon>
-                  <span>Download Visual Resume</span>
-                </button>
+                <div class="container">
+                  <label class="label" onclick="downloadResume('human')">
+                    <input type="checkbox" class="input" />
+                    <span class="circle">
+                      <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                          d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                      </svg>
+                      <div class="square"></div>
+                    </span>
+                    <p class="title">Download</p>
+                    <p class="title">Open</p>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -372,7 +424,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>MongoDB Atlas</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Hands-on experience managing cloud-hosted MongoDB clusters. Worked on database provisioning, monitoring, scaling, and backups with Atlas UI and CLI tools.</p>
+                    <p>Hands-on experience managing cloud-hosted MongoDB clusters. Worked on database provisioning,
+                      monitoring, scaling, and backups with Atlas UI and CLI tools.</p>
                   </div>
                 </div>
               </li>
@@ -519,7 +572,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Cisco Networking</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Exposure to Cisco networking concepts including routing, switching, and firewall configuration. Familiar with packet tracing, troubleshooting, and enterprise setups.</p>
+                    <p>Exposure to Cisco networking concepts including routing, switching, and firewall configuration.
+                      Familiar with packet tracing, troubleshooting, and enterprise setups.</p>
                   </div>
                 </div>
               </li>
@@ -543,7 +597,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Wireshark</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Hands-on experience with Wireshark for packet analysis and network troubleshooting. Used for capturing, inspecting, and diagnosing network traffic issues.</p>
+                    <p>Hands-on experience with Wireshark for packet analysis and network troubleshooting. Used for
+                      capturing, inspecting, and diagnosing network traffic issues.</p>
                   </div>
                 </div>
               </li>
@@ -613,11 +668,13 @@
               <li class="testimonials-item">
                 <div class="content-card" data-testimonials-item>
                   <figure class="testimonials-avatar-box">
-                    <img src="./assets/images/android.svg" alt="Android Development" width="60" data-testimonials-avatar>
+                    <img src="./assets/images/android.svg" alt="Android Development" width="60"
+                      data-testimonials-avatar>
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Android Development</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Experience with ADB, SDK tools, and system troubleshooting. Built and tested mobile apps with Android Studio, focusing on debugging and performance optimization.</p>
+                    <p>Experience with ADB, SDK tools, and system troubleshooting. Built and tested mobile apps with
+                      Android Studio, focusing on debugging and performance optimization.</p>
                   </div>
                 </div>
               </li>
@@ -629,7 +686,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Docker</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Practical knowledge in containerizing applications with Docker. Managed Dockerfiles, images, and networks for development and production environments.</p>
+                    <p>Practical knowledge in containerizing applications with Docker. Managed Dockerfiles, images, and
+                      networks for development and production environments.</p>
                   </div>
                 </div>
               </li>
@@ -641,7 +699,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Kubernetes</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Worked on container orchestration with Kubernetes. Managed deployments, services, and scaling applications across clusters for reliability and performance.</p>
+                    <p>Worked on container orchestration with Kubernetes. Managed deployments, services, and scaling
+                      applications across clusters for reliability and performance.</p>
                   </div>
                 </div>
               </li>
@@ -653,7 +712,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Amazon Linux</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Worked with Amazon Linux distributions for server deployments and cloud-based applications. Familiar with package management, configuration, and security hardening.</p>
+                    <p>Worked with Amazon Linux distributions for server deployments and cloud-based applications.
+                      Familiar with package management, configuration, and security hardening.</p>
                   </div>
                 </div>
               </li>
@@ -665,7 +725,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Git</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Proficient in version control using Git. Experienced with branching, merging, resolving conflicts, and collaborating on projects hosted on GitHub and GitLab.</p>
+                    <p>Proficient in version control using Git. Experienced with branching, merging, resolving
+                      conflicts, and collaborating on projects hosted on GitHub and GitLab.</p>
                   </div>
                 </div>
               </li>
@@ -701,7 +762,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Next.js</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Built modern web applications using Next.js. Leveraged server-side rendering, API routes, and optimized static site generation for fast and scalable projects.</p>
+                    <p>Built modern web applications using Next.js. Leveraged server-side rendering, API routes, and
+                      optimized static site generation for fast and scalable projects.</p>
                   </div>
                 </div>
               </li>
@@ -745,6 +807,32 @@
                 </div>
               </li>
 
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img src="./assets/images/xampp.png" alt="XAMPP" width="60" data-testimonials-avatar>
+                  </figure>
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title>XAMPP</h4>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>Local development environment for PHP applications. Experience with Apache, MySQL, and PHP stack
+                      for web development and testing.</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img src="./assets/images/spring-boot.png" alt="Spring Boot" width="60" data-testimonials-avatar>
+                  </figure>
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Spring Boot</h4>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>Java-based framework for building enterprise applications. Experience with REST APIs, dependency
+                      injection, and microservices architecture.</p>
+                  </div>
+                </div>
+              </li>
+
             </ul>
           </section>
 
@@ -776,7 +864,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>NumPy</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Used NumPy extensively for numerical computing and data analysis. Fluent in vectorized operations, linear algebra, and handling large multidimensional arrays.</p>
+                    <p>Used NumPy extensively for numerical computing and data analysis. Fluent in vectorized
+                      operations, linear algebra, and handling large multidimensional arrays.</p>
                   </div>
                 </div>
               </li>
@@ -812,7 +901,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>PyTorch</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Experience in building and training machine learning and deep learning models using PyTorch. Worked with neural networks, tensors, and model optimization.</p>
+                    <p>Experience in building and training machine learning and deep learning models using PyTorch.
+                      Worked with neural networks, tensors, and model optimization.</p>
                   </div>
                 </div>
               </li>
@@ -848,7 +938,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Seaborn</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Created advanced data visualizations using Seaborn. Skilled in statistical plotting, heatmaps, and integrating visual insights into data storytelling.</p>
+                    <p>Created advanced data visualizations using Seaborn. Skilled in statistical plotting, heatmaps,
+                      and integrating visual insights into data storytelling.</p>
                   </div>
                 </div>
               </li>
@@ -956,7 +1047,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>AWS Neptune</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Experience with AWS Neptune graph database for handling connected data. Worked on querying with Gremlin and SPARQL for analytics and recommendation systems.</p>
+                    <p>Experience with AWS Neptune graph database for handling connected data. Worked on querying with
+                      Gremlin and SPARQL for analytics and recommendation systems.</p>
                   </div>
                 </div>
               </li>
@@ -968,7 +1060,8 @@
                   </figure>
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Neo4j</h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>Worked with Neo4j graph database for managing connected datasets. Proficient in writing Cypher queries for recommendation engines and relationship analysis.</p>
+                    <p>Worked with Neo4j graph database for managing connected datasets. Proficient in writing Cypher
+                      queries for recommendation engines and relationship analysis.</p>
                   </div>
                 </div>
               </li>
@@ -1066,6 +1159,19 @@
                   <h4 class="h4 testimonials-item-title" data-testimonials-title>Kotlin</h4>
                   <div class="testimonials-text" data-testimonials-text>
                     <p>Used for Android applications and modern JVM-based projects.</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img src="./assets/images/php.png" alt="php" width="60" data-testimonials-avatar>
+                  </figure>
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title>PHP</h4>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>Skilled in PHP, with an understanding of backend web development principles and database
+                      integration.</p>
                   </div>
                 </div>
               </li>
@@ -1230,12 +1336,14 @@
 
             <!-- AI/ML Certifications -->
             <li class="project-item active" data-filter-item data-category="ai/ml">
-              <a href="https://drive.google.com/file/d/1l3L-EXKsL-XieNQENfbKAK9i32uLe5F2/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1l3L-EXKsL-XieNQENfbKAK9i32uLe5F2/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="brain-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1l3L-EXKsL-XieNQENfbKAK9i32uLe5F2&sz=w400" alt="AI/ML Certificate 1" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1l3L-EXKsL-XieNQENfbKAK9i32uLe5F2&sz=w400"
+                    alt="AI/ML Certificate 1" loading="lazy">
                 </figure>
                 <h3 class="project-title">AI/ML Certificate</h3>
                 <p class="project-category">AI/ML</p>
@@ -1243,12 +1351,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="ai/ml">
-              <a href="https://drive.google.com/file/d/1OrtIsMrdpY32XlG2Reil8XQ6m29KBp1D/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1OrtIsMrdpY32XlG2Reil8XQ6m29KBp1D/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="analytics-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1OrtIsMrdpY32XlG2Reil8XQ6m29KBp1D&sz=w400" alt="Machine Learning Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1OrtIsMrdpY32XlG2Reil8XQ6m29KBp1D&sz=w400"
+                    alt="Machine Learning Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Machine Learning</h3>
                 <p class="project-category">AI/ML</p>
@@ -1256,12 +1366,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="ai/ml">
-              <a href="https://drive.google.com/file/d/1PAwL84tzvsE8jLMukLZoZXa37uUfCeE5/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1PAwL84tzvsE8jLMukLZoZXa37uUfCeE5/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="library-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1PAwL84tzvsE8jLMukLZoZXa37uUfCeE5&sz=w400" alt="Deep Learning Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1PAwL84tzvsE8jLMukLZoZXa37uUfCeE5&sz=w400"
+                    alt="Deep Learning Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Deep Learning</h3>
                 <p class="project-category">AI/ML</p>
@@ -1269,12 +1381,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="ai/ml">
-              <a href="https://drive.google.com/file/d/1eUTHhIpDNTvDo3yFFpqT3J3nn1B-y7Om/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1eUTHhIpDNTvDo3yFFpqT3J3nn1B-y7Om/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1eUTHhIpDNTvDo3yFFpqT3J3nn1B-y7Om&sz=w400" alt="Computer Vision Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1eUTHhIpDNTvDo3yFFpqT3J3nn1B-y7Om&sz=w400"
+                    alt="Computer Vision Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Computer Vision</h3>
                 <p class="project-category">AI/ML</p>
@@ -1282,12 +1396,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="ai/ml">
-              <a href="https://drive.google.com/file/d/1nmRXKW0ChMsRQRSVphflMH5-Mqo8QluR/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1nmRXKW0ChMsRQRSVphflMH5-Mqo8QluR/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="chatbubbles-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1nmRXKW0ChMsRQRSVphflMH5-Mqo8QluR&sz=w400" alt="NLP Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1nmRXKW0ChMsRQRSVphflMH5-Mqo8QluR&sz=w400"
+                    alt="NLP Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Natural Language Processing</h3>
                 <p class="project-category">AI/ML</p>
@@ -1295,12 +1411,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="ai/ml">
-              <a href="https://drive.google.com/file/d/1CO1GxAf1CGJ3xDsSAP70pbcftV3s7uMt/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1CO1GxAf1CGJ3xDsSAP70pbcftV3s7uMt/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="stats-chart-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1CO1GxAf1CGJ3xDsSAP70pbcftV3s7uMt&sz=w400" alt="Data Science Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1CO1GxAf1CGJ3xDsSAP70pbcftV3s7uMt&sz=w400"
+                    alt="Data Science Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Data Science</h3>
                 <p class="project-category">AI/ML</p>
@@ -1308,12 +1426,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="ai/ml">
-              <a href="https://drive.google.com/file/d/1zfQZ32IX46fbjosTHfM51EIXmG9BioTi/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1zfQZ32IX46fbjosTHfM51EIXmG9BioTi/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="rocket-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1zfQZ32IX46fbjosTHfM51EIXmG9BioTi&sz=w400" alt="AI Specialization Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1zfQZ32IX46fbjosTHfM51EIXmG9BioTi&sz=w400"
+                    alt="AI Specialization Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">AI Specialization</h3>
                 <p class="project-category">AI/ML</p>
@@ -1322,12 +1442,14 @@
 
             <!-- Cloud Certifications -->
             <li class="project-item active" data-filter-item data-category="cloud">
-              <a href="https://drive.google.com/file/d/1jVT56JA_Xkbq4VUQk5q7l9s3ATwLpr2v/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1jVT56JA_Xkbq4VUQk5q7l9s3ATwLpr2v/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="cloud-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1jVT56JA_Xkbq4VUQk5q7l9s3ATwLpr2v&sz=w400" alt="Cloud Certificate 1" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1jVT56JA_Xkbq4VUQk5q7l9s3ATwLpr2v&sz=w400"
+                    alt="Cloud Certificate 1" loading="lazy">
                 </figure>
                 <h3 class="project-title">Cloud Computing</h3>
                 <p class="project-category">Cloud</p>
@@ -1335,12 +1457,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="cloud">
-              <a href="https://drive.google.com/file/d/1DYnUIMrM0cTOezcJiljVkOhivAT12jMu/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1DYnUIMrM0cTOezcJiljVkOhivAT12jMu/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="server-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1DYnUIMrM0cTOezcJiljVkOhivAT12jMu&sz=w400" alt="Cloud Architecture Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1DYnUIMrM0cTOezcJiljVkOhivAT12jMu&sz=w400"
+                    alt="Cloud Architecture Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Cloud Architecture</h3>
                 <p class="project-category">Cloud</p>
@@ -1349,12 +1473,14 @@
 
             <!-- Cybersecurity Certifications -->
             <li class="project-item active" data-filter-item data-category="cybersecurity">
-              <a href="https://drive.google.com/file/d/1omsw9R6mQ8SMr9ttDBO5AG1I3cpA7BQT/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1omsw9R6mQ8SMr9ttDBO5AG1I3cpA7BQT/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="shield-checkmark-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1omsw9R6mQ8SMr9ttDBO5AG1I3cpA7BQT&sz=w400" alt="Cybersecurity Certificate 1" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1omsw9R6mQ8SMr9ttDBO5AG1I3cpA7BQT&sz=w400"
+                    alt="Cybersecurity Certificate 1" loading="lazy">
                 </figure>
                 <h3 class="project-title">Cybersecurity Fundamentals</h3>
                 <p class="project-category">Cybersecurity</p>
@@ -1362,12 +1488,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="cybersecurity">
-              <a href="https://drive.google.com/file/d/1t2iLydcfDoAecfFQ9YIUqegPrMIQDUHg/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1t2iLydcfDoAecfFQ9YIUqegPrMIQDUHg/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="bug-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1t2iLydcfDoAecfFQ9YIUqegPrMIQDUHg&sz=w400" alt="Ethical Hacking Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1t2iLydcfDoAecfFQ9YIUqegPrMIQDUHg&sz=w400"
+                    alt="Ethical Hacking Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Ethical Hacking</h3>
                 <p class="project-category">Cybersecurity</p>
@@ -1375,12 +1503,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="cybersecurity">
-              <a href="https://drive.google.com/file/d/1l_bnN0gxoxlCOrG4iUPtST2e5e0Cx-PW/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1l_bnN0gxoxlCOrG4iUPtST2e5e0Cx-PW/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="lock-closed-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1l_bnN0gxoxlCOrG4iUPtST2e5e0Cx-PW&sz=w400" alt="Network Security Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1l_bnN0gxoxlCOrG4iUPtST2e5e0Cx-PW&sz=w400"
+                    alt="Network Security Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Network Security</h3>
                 <p class="project-category">Cybersecurity</p>
@@ -1388,12 +1518,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="cybersecurity">
-              <a href="https://drive.google.com/file/d/1EGl4QeI2oOHPRQVDgrGDg3t9Vz-Tefwc/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1EGl4QeI2oOHPRQVDgrGDg3t9Vz-Tefwc/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="terminal-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1EGl4QeI2oOHPRQVDgrGDg3t9Vz-Tefwc&sz=w400" alt="Penetration Testing Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1EGl4QeI2oOHPRQVDgrGDg3t9Vz-Tefwc&sz=w400"
+                    alt="Penetration Testing Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Penetration Testing</h3>
                 <p class="project-category">Cybersecurity</p>
@@ -1401,12 +1533,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="cybersecurity">
-              <a href="https://drive.google.com/file/d/1B00ozWTZYmTv6nGFIoVHapyCVCxzEV9s/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1B00ozWTZYmTv6nGFIoVHapyCVCxzEV9s/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1B00ozWTZYmTv6nGFIoVHapyCVCxzEV9s&sz=w400" alt="Digital Forensics Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1B00ozWTZYmTv6nGFIoVHapyCVCxzEV9s&sz=w400"
+                    alt="Digital Forensics Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Digital Forensics</h3>
                 <p class="project-category">Cybersecurity</p>
@@ -1414,12 +1548,14 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="cybersecurity">
-              <a href="https://drive.google.com/file/d/1mnoBJ_6kg9QhpFC0se780xnmnOLwDoFb/view?usp=drive_link" target="_blank">
+              <a href="https://drive.google.com/file/d/1mnoBJ_6kg9QhpFC0se780xnmnOLwDoFb/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="warning-outline"></ion-icon>
                   </div>
-                  <img src="https://drive.google.com/thumbnail?id=1mnoBJ_6kg9QhpFC0se780xnmnOLwDoFb&sz=w400" alt="Incident Response Certificate" loading="lazy">
+                  <img src="https://drive.google.com/thumbnail?id=1mnoBJ_6kg9QhpFC0se780xnmnOLwDoFb&sz=w400"
+                    alt="Incident Response Certificate" loading="lazy">
                 </figure>
                 <h3 class="project-title">Incident Response</h3>
                 <p class="project-category">Cybersecurity</p>
@@ -1427,71 +1563,81 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="events/hackathons">
-  <a href="https://drive.google.com/file/d/1RH3PQ6cgHaMCVGcnfiDjBDVJmsCt8opq/view?usp=drive_link" target="_blank">
-    <figure class="project-img">
-      <div class="project-item-icon-box">
-        <ion-icon name="trophy-outline"></ion-icon>
-      </div>
-      <img src="https://drive.google.com/thumbnail?id=1RH3PQ6cgHaMCVGcnfiDjBDVJmsCt8opq&sz=w400" alt="GDG on Campus Certificate" loading="lazy">
-    </figure>
-    <h3 class="project-title">GDG on Campus</h3>
-    <p class="project-category">Events/Hackathons</p>
-  </a>
-</li>
-
-
-<li class="project-item active" data-filter-item data-category="events/hackathons">
-  <a href="https://drive.google.com/file/d/1GEPhhK4y-n_DY1ftvVbG6eS6B8cPYhxQ/view?usp=drive_link" target="_blank">
-    <figure class="project-img">
-      <div class="project-item-icon-box">
-        <ion-icon name="library-outline"></ion-icon>
-      </div>
-      <img src="https://drive.google.com/thumbnail?id=1GEPhhK4y-n_DY1ftvVbG6eS6B8cPYhxQ&sz=w400" alt="MLSA Hackocalypse Certificate" loading="lazy">
-    </figure>
-    <h3 class="project-title">MLSA Hackocalypse</h3>
-    <p class="project-category">Events/Hackathons</p>
-  </a>
-</li>
+              <a href="https://drive.google.com/file/d/1RH3PQ6cgHaMCVGcnfiDjBDVJmsCt8opq/view?usp=drive_link"
+                target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="trophy-outline"></ion-icon>
+                  </div>
+                  <img src="https://drive.google.com/thumbnail?id=1RH3PQ6cgHaMCVGcnfiDjBDVJmsCt8opq&sz=w400"
+                    alt="GDG on Campus Certificate" loading="lazy">
+                </figure>
+                <h3 class="project-title">GDG on Campus</h3>
+                <p class="project-category">Events/Hackathons</p>
+              </a>
+            </li>
 
 
             <li class="project-item active" data-filter-item data-category="events/hackathons">
-  <a href="https://drive.google.com/file/d/11ujna8a1m-BJ57S8UAnCqlJ9qV4683y-/view?usp=sharing" target="_blank">
-    <figure class="project-img">
-      <div class="project-item-icon-box">
-        <ion-icon name="library-outline"></ion-icon>
-      </div>
-      <img src="https://drive.google.com/thumbnail?id=11ujna8a1m-BJ57S8UAnCqlJ9qV4683y-&sz=w400" alt="MLSA Defcon Certificate" loading="lazy">
-    </figure>
-    <h3 class="project-title">MLSA Defcon</h3>
-    <p class="project-category">Events/Hackathons</p>
-  </a>
-</li>
+              <a href="https://drive.google.com/file/d/1GEPhhK4y-n_DY1ftvVbG6eS6B8cPYhxQ/view?usp=drive_link"
+                target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="library-outline"></ion-icon>
+                  </div>
+                  <img src="https://drive.google.com/thumbnail?id=1GEPhhK4y-n_DY1ftvVbG6eS6B8cPYhxQ&sz=w400"
+                    alt="MLSA Hackocalypse Certificate" loading="lazy">
+                </figure>
+                <h3 class="project-title">MLSA Hackocalypse</h3>
+                <p class="project-category">Events/Hackathons</p>
+              </a>
+            </li>
 
-<li class="project-item active" data-filter-item data-category="events/hackathons">
-  <a href="https://drive.google.com/file/d/1bSehF9vPjnT1JCBqTClqg3hPVDyZSKXs/view?usp=drive_link" target="_blank">
-    <figure class="project-img">
-      <div class="project-item-icon-box">
-        <ion-icon name="brain-outline"></ion-icon>
-      </div>
-      <img src="https://drive.google.com/thumbnail?id=1bSehF9vPjnT1JCBqTClqg3hPVDyZSKXs&sz=w400" alt="KI3 Certificate" loading="lazy">
-    </figure>
-    <h3 class="project-title">KI3</h3>
-    <p class="project-category">Events/Hackathons</p>
-  </a>
-</li>
 
-<li class="project-item active" data-filter-item data-category="events/hackathons">
-  <a href="https://drive.google.com/file/d/1CrkgZfeSSk0itwln8p7-GeIfcFcIiCA0/view?usp=drive_link" target="_blank">
-    <figure class="project-img">
-      <div class="project-item-icon-box">
-        <ion-icon name="brain-outline"></ion-icon>
-      </div>
-      <img src="https://drive.google.com/thumbnail?id=1CrkgZfeSSk0itwln8p7-GeIfcFcIiCA0&sz=w400" alt="Kodesphere Certificate" loading="lazy">
-    </figure>
-    <h3 class="project-title">Kodesphere</h3>
-    <p class="project-category">Events/Hackathons</p>
-  </a>
-</li>
+            <li class="project-item active" data-filter-item data-category="events/hackathons">
+              <a href="https://drive.google.com/file/d/11ujna8a1m-BJ57S8UAnCqlJ9qV4683y-/view?usp=sharing"
+                target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="library-outline"></ion-icon>
+                  </div>
+                  <img src="https://drive.google.com/thumbnail?id=11ujna8a1m-BJ57S8UAnCqlJ9qV4683y-&sz=w400"
+                    alt="MLSA Defcon Certificate" loading="lazy">
+                </figure>
+                <h3 class="project-title">MLSA Defcon</h3>
+                <p class="project-category">Events/Hackathons</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="events/hackathons">
+              <a href="https://drive.google.com/file/d/1bSehF9vPjnT1JCBqTClqg3hPVDyZSKXs/view?usp=drive_link"
+                target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="brain-outline"></ion-icon>
+                  </div>
+                  <img src="https://drive.google.com/thumbnail?id=1bSehF9vPjnT1JCBqTClqg3hPVDyZSKXs&sz=w400"
+                    alt="KI3 Certificate" loading="lazy">
+                </figure>
+                <h3 class="project-title">KI3</h3>
+                <p class="project-category">Events/Hackathons</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="events/hackathons">
+              <a href="https://drive.google.com/file/d/1CrkgZfeSSk0itwln8p7-GeIfcFcIiCA0/view?usp=drive_link"
+                target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="brain-outline"></ion-icon>
+                  </div>
+                  <img src="https://drive.google.com/thumbnail?id=1CrkgZfeSSk0itwln8p7-GeIfcFcIiCA0&sz=w400"
+                    alt="Kodesphere Certificate" loading="lazy">
+                </figure>
+                <h3 class="project-title">Kodesphere</h3>
+                <p class="project-category">Events/Hackathons</p>
+              </a>
+            </li>
 
             <!-- Placeholder cards for other categories -->
 
@@ -1511,16 +1657,31 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="internships">
-              <a href="#" onclick="return false;">
+              <a href="https://drive.google.com/file/d/1COmYV-qH0qqk44h3Pf0b2TOa_tNx4f_0/view?usp=drive_link"
+                target="_blank">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="briefcase-outline"></ion-icon>
                   </div>
-                  <div class="placeholder-cert">
-                    <p>Internship certificates will be added here</p>
-                  </div>
+                  <img src="https://drive.google.com/thumbnail?id=1COmYV-qH0qqk44h3Pf0b2TOa_tNx4f_0&sz=w400"
+                    alt="Blinkit Internship Certificate" loading="lazy">
                 </figure>
-                <h3 class="project-title">Coming Soon</h3>
+                <h3 class="project-title">Blinkit Internship</h3>
+                <p class="project-category">Internships</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="internships">
+              <a href="https://drive.google.com/file/d/1mkQnOGs0JuY0HyZOBpHE8ItLgP_SMn5M/view?usp=drive_link"
+                target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="briefcase-outline"></ion-icon>
+                  </div>
+                  <img src="https://drive.google.com/thumbnail?id=1mkQnOGs0JuY0HyZOBpHE8ItLgP_SMn5M&sz=w400"
+                    alt="CSM Internship Certificate" loading="lazy">
+                </figure>
+                <h3 class="project-title">CSM Internship</h3>
                 <p class="project-category">Internships</p>
               </a>
             </li>
@@ -1658,29 +1819,219 @@
       line-height: 1.6;
     }
 
-    .resume-download-btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: 500;
+    /* New Resume Download Button Styles */
+    .container {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .label {
+      background-color: transparent;
+      border: 2px solid rgb(91, 91, 240);
       display: flex;
       align-items: center;
-      gap: 8px;
+      border-radius: 50px;
+      width: 160px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
+      transition: all 0.4s ease;
+      padding: 5px;
+      position: relative;
+    }
+
+    .label::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      width: 8px;
+      height: 8px;
+      transition: all 0.4s ease;
+      border-radius: 100%;
+      margin: auto;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .label .input {
+      display: none;
+    }
+
+    .label .title {
+      font-size: 17px;
+      color: var(--white-1);
+      transition: all 0.4s ease;
+      position: absolute;
+      right: 18px;
+      bottom: 14px;
+      text-align: center;
+    }
+
+    .label .title:last-child {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .label .circle {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      background-color: rgb(91, 91, 240);
+      display: flex;
       justify-content: center;
+      align-items: center;
+      transition: all 0.4s ease;
+      position: relative;
+      box-shadow: 0 0 0 0 rgb(255, 255, 255);
+      overflow: hidden;
     }
 
-    .resume-download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    .label .circle .icon {
+      color: #fff;
+      width: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s ease;
     }
 
-    .resume-download-btn ion-icon {
-      font-size: 18px;
+    .label .circle .square {
+      aspect-ratio: 1;
+      width: 15px;
+      border-radius: 2px;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s ease;
+    }
+
+    .label .circle::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #3333a8;
+      width: 100%;
+      height: 0;
+      transition: all 0.4s ease;
+    }
+
+    .label:has(.input:checked) {
+      width: 57px;
+      animation: installed 0.4s ease 3.5s forwards;
+    }
+
+    .label:has(.input:checked)::before {
+      animation: rotate 3s ease-in-out 0.4s forwards;
+    }
+
+    .label .input:checked+.circle {
+      animation: pulse 1s forwards, circleDelete 0.2s ease 3.5s forwards;
+      rotate: 180deg;
+    }
+
+    .label .input:checked+.circle::before {
+      animation: installing 3s ease-in-out forwards;
+    }
+
+    .label .input:checked+.circle .icon {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .label .input:checked~.circle .square {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .label .input:checked~.title {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .label .input:checked~.title:last-child {
+      animation: showInstalledMessage 0.4s ease 3.5s forwards;
+    }
+
+    @keyframes pulse {
+      0% {
+        scale: 0.95;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+
+      70% {
+        scale: 1;
+        box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
+      }
+
+      100% {
+        scale: 0.95;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    @keyframes installing {
+      from {
+        height: 0;
+      }
+
+      to {
+        height: 100%;
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(-90deg) translate(27px) rotate(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      99% {
+        transform: rotate(270deg) translate(27px) rotate(270deg);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes installed {
+      100% {
+        width: 150px;
+        border-color: rgb(35, 174, 35);
+      }
+    }
+
+    @keyframes circleDelete {
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes showInstalledMessage {
+      100% {
+        opacity: 1;
+        visibility: visible;
+        right: 56px;
+      }
     }
 
     /* Certifications summary styles */
@@ -2455,6 +2806,32 @@
           loadCertifications();
         }
       }, 1500);
+    });
+
+    // Theme Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+
+      // Check for saved theme preference or default to 'dark'
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      body.setAttribute('data-theme', currentTheme);
+
+      // Set toggle state based on current theme
+      if (currentTheme === 'light') {
+        themeToggle.checked = true;
+      }
+
+      // Theme toggle event listener
+      themeToggle.addEventListener('change', function () {
+        if (this.checked) {
+          body.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
     });
   </script>
 
