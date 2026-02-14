@@ -959,6 +959,19 @@ main {
   background: var(--bg-gradient-onyx);
   border-radius: 14px;
   box-shadow: var(--shadow-1);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.testimonials-avatar-box img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .testimonials-item-title { margin-bottom: 7px; }
@@ -2276,4 +2289,80 @@ textarea.form-input::-webkit-resizer { display: none; }
   height: 200px;
   object-fit: cover;
   border-radius: 16px;
+}
+
+/*-----------------------------------*\
+  #AUTO-SCROLLING SKILLS
+\*-----------------------------------*/
+
+/* Container for auto-scrolling skills */
+.testimonials {
+  overflow: hidden;
+}
+
+/* Wrapper for scrolling content */
+.testimonials-list.scroll-wrapper {
+  display: flex;
+  overflow: hidden;
+  padding: 25px 0;
+  margin: 0;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  overscroll-behavior-inline: auto;
+}
+
+/* Track that contains the scrolling items */
+.scroll-track {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+/* Individual items in scroll track */
+.scroll-track .testimonials-item {
+  min-width: 280px;
+  flex-shrink: 0;
+  scroll-snap-align: none;
+}
+
+/* Animation for left to right scrolling (applied to all rows) */
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Apply animation to all scroll tracks */
+.scroll-wrapper .scroll-track {
+  animation: scroll-left-to-right 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.scroll-wrapper:hover .scroll-track {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-track .testimonials-item {
+    min-width: 240px;
+  }
+  
+  .scroll-wrapper .scroll-track {
+    animation-duration: 20s;
+  }
+  
+  .testimonials-avatar-box {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .testimonials-avatar-box img {
+    width: 40px;
+    height: 40px;
+  }
 }
