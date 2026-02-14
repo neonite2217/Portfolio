@@ -486,7 +486,67 @@ document.addEventListener('DOMContentLoaded', function() {
   document.head.appendChild(style);
   
   console.log('Portfolio enhanced JavaScript loaded successfully!');
+  
+  // Initialize auto-scrolling skills
+  initAutoScrollingSkills();
 });
+
+// Auto-scrolling skills functionality
+function initAutoScrollingSkills() {
+  // Find all testimonials sections within the skills page
+  const skillsSection = document.querySelector('[data-page="skills"]');
+  if (!skillsSection) return;
+  
+  const testimonialSections = skillsSection.querySelectorAll('.testimonials');
+  
+  testimonialSections.forEach((section, index) => {
+    const list = section.querySelector('.testimonials-list');
+    if (!list) return;
+    
+    // Get all items
+    const items = list.querySelectorAll('.testimonials-item');
+    if (items.length === 0) return;
+    
+    // Create scroll track wrapper
+    const scrollTrack = document.createElement('div');
+    scrollTrack.className = 'scroll-track';
+    
+    // Move all items to scroll track
+    items.forEach(item => {
+      scrollTrack.appendChild(item.cloneNode(true));
+    });
+    
+    // Duplicate items for seamless loop
+    items.forEach(item => {
+      scrollTrack.appendChild(item.cloneNode(true));
+    });
+    
+    // Clear the list and add the track
+    list.innerHTML = '';
+    list.appendChild(scrollTrack);
+    
+    // Add scroll-wrapper class for auto-scrolling
+    list.classList.add('scroll-wrapper');
+    
+    // Re-attach click events to cloned items
+    const clonedItems = list.querySelectorAll('[data-testimonials-item]');
+    clonedItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const avatar = this.querySelector('[data-testimonials-avatar]');
+        const title = this.querySelector('[data-testimonials-title]');
+        const text = this.querySelector('[data-testimonials-text]');
+        
+        if (avatar && title && text && modalImg && modalTitle && modalText) {
+          modalImg.src = avatar.src;
+          modalImg.alt = avatar.alt;
+          modalTitle.innerHTML = title.innerHTML;
+          modalText.innerHTML = text.innerHTML;
+          testimonialsModalFunc();
+        }
+      });
+    });
+  });
+}
 
 // Make functions globally available
 window.downloadResume = downloadResume;
