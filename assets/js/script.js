@@ -551,3 +551,79 @@ function initAutoScrollingSkills() {
 // Make functions globally available
 window.downloadResume = downloadResume;
 window.sendMessage = sendMessage;
+
+// ============================================
+// TECH STACK FILTERING FOR PROJECTS
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  initTechStackFilter();
+  showAllProjects();
+});
+
+function initTechStackFilter() {
+  const filterPills = document.querySelectorAll('.tech-filter-pill');
+  const projectItems = document.querySelectorAll('.project-card-item');
+
+  if (!filterPills.length || !projectItems.length) return;
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', function() {
+      // Update active pill
+      filterPills.forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+
+      const selectedTech = this.dataset.techFilter;
+      filterProjectsByTech(selectedTech);
+    });
+  });
+}
+
+function filterProjectsByTech(tech) {
+  const projectItems = document.querySelectorAll('.project-card-item');
+  let visibleCount = 0;
+
+  projectItems.forEach(item => {
+    const itemTechs = item.dataset.projectTechs || '';
+    const techsArray = itemTechs.split(' ');
+
+    if (tech === 'all' || techsArray.includes(tech)) {
+      item.classList.add('visible');
+      item.style.display = 'block';
+      // Staggered animation
+      item.style.animationDelay = (visibleCount * 0.05) + 's';
+      visibleCount++;
+    } else {
+      item.classList.remove('visible');
+      item.style.display = 'none';
+    }
+  });
+
+  // Show "no results" message if needed
+  const existingMsg = document.querySelector('.no-projects-message');
+  if (existingMsg) existingMsg.remove();
+
+  if (visibleCount === 0) {
+    const projectsList = document.getElementById('projects-list');
+    if (projectsList) {
+      const msg = document.createElement('li');
+      msg.className = 'no-projects-message';
+      msg.innerHTML = 'No projects found with this technology. <a href="https://github.com/neonite2217?tab=repositories" target="_blank" style="color: var(--orange-yellow-crayola);">Check GitHub for more &rarr;</a>';
+      projectsList.appendChild(msg);
+    }
+  }
+}
+
+function showAllProjects() {
+  const projectItems = document.querySelectorAll('.project-card-item');
+  projectItems.forEach((item, index) => {
+    item.classList.add('visible');
+    item.style.display = 'block';
+    item.style.animationDelay = (index * 0.05) + 's';
+  });
+}
+
+// Show all projects on page load
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(showAllProjects, 100);
+});

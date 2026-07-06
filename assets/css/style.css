@@ -2291,78 +2291,370 @@ textarea.form-input::-webkit-resizer { display: none; }
   border-radius: 16px;
 }
 
-/*-----------------------------------*\
-  #AUTO-SCROLLING SKILLS
-\*-----------------------------------*/
+/* Old auto-scrolling skills CSS removed - replaced with categorized vertical list */
 
-/* Container for auto-scrolling skills */
-.testimonials {
-  overflow: hidden;
+/* ============================================
+   NEW SKILLS SECTION - Categorized Vertical List
+   ============================================ */
+
+.skill-category {
+  margin-bottom: 30px;
 }
 
-/* Wrapper for scrolling content */
-.testimonials-list.scroll-wrapper {
-  display: flex;
-  overflow: hidden;
-  padding: 25px 0;
+.skill-category-title {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  color: var(--white-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  scroll-behavior: auto;
-  scroll-snap-type: none;
-  overscroll-behavior-inline: auto;
 }
 
-/* Track that contains the scrolling items */
-.scroll-track {
+.skill-list-item {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  position: relative;
+  transition: var(--transition-1);
+}
+
+.skill-list-item:hover {
+  padding-left: 8px;
+}
+
+.skill-list-item:hover .skill-name {
+  color: var(--orange-yellow-crayola);
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
   flex-shrink: 0;
-  will-change: transform;
+  border-radius: 4px;
 }
 
-/* Individual items in scroll track */
-.scroll-track .testimonials-item {
-  min-width: 280px;
-  flex-shrink: 0;
-  scroll-snap-align: none;
+.skill-name {
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+  color: var(--light-gray);
+  transition: var(--transition-1);
+  line-height: 1.4;
 }
 
-/* Animation for left to right scrolling (applied to all rows) */
-@keyframes scroll-left-to-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Tooltip on hover */
+.skill-tooltip {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: var(--fs-8);
+  color: var(--light-gray);
+  width: max-content;
+  max-width: 280px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-1);
+  pointer-events: none;
+  box-shadow: var(--shadow-4);
+  z-index: 10;
+  line-height: 1.6;
 }
 
-/* Apply animation to all scroll tracks */
-.scroll-wrapper .scroll-track {
-  animation: scroll-left-to-right 25s linear infinite;
+.skill-list-item:hover .skill-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
 }
 
-/* Pause animation on hover */
-.scroll-wrapper:hover .scroll-track {
-  animation-play-state: paused;
+/* For the last few items, show tooltip on the left */
+.skill-list-item:nth-last-child(-n+3) .skill-tooltip {
+  left: auto;
+  right: calc(100% + 10px);
 }
 
-/* Responsive adjustments */
+/* Responsive: tooltip below on mobile */
 @media (max-width: 768px) {
-  .scroll-track .testimonials-item {
-    min-width: 240px;
+  .skill-tooltip {
+    left: 40px !important;
+    right: auto !important;
+    top: 100%;
+    transform: translateY(0) scale(0.95);
+    max-width: calc(100% - 40px);
   }
-  
-  .scroll-wrapper .scroll-track {
-    animation-duration: 20s;
+
+  .skill-list-item:hover .skill-tooltip {
+    transform: translateY(0) scale(1);
   }
-  
-  .testimonials-avatar-box {
-    width: 60px;
-    height: 60px;
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .skill-category-title {
+  color: var(--white-2);
+  border-bottom-color: var(--jet);
+}
+
+[data-theme="light"] .skill-name {
+  color: var(--light-gray);
+}
+
+[data-theme="light"] .skill-list-item:hover .skill-name {
+  color: var(--orange-yellow-crayola);
+}
+
+[data-theme="light"] .skill-tooltip {
+  background: var(--eerie-black-2);
+  border-color: var(--jet);
+  color: var(--light-gray);
+}
+
+
+/* ============================================
+   NEW PROJECTS SECTION - Tech Stack Badges
+   ============================================ */
+
+.tech-filter-section {
+  margin-bottom: 25px;
+}
+
+.tech-filter-label {
+  font-size: var(--fs-7);
+  color: var(--light-gray-70);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--jet);
+  background: var(--eerie-black-1);
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-family: var(--ff-poppins);
+  cursor: pointer;
+  transition: var(--transition-1);
+  white-space: nowrap;
+}
+
+.tech-filter-pill:hover {
+  border-color: var(--orange-yellow-crayola);
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-1px);
+}
+
+.tech-filter-pill.active {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  border-color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
+}
+
+/* Project Cards */
+.project-cards-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.project-card-item {
+  display: none;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.project-card-item.visible {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .testimonials-avatar-box img {
-    width: 40px;
-    height: 40px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.project-card {
+  background: var(--border-gradient-onyx);
+  border-radius: 16px;
+  padding: 1px;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
+}
+
+.project-card::before {
+  content: "";
+  display: block;
+  border-radius: inherit;
+}
+
+.project-card-content {
+  background: var(--bg-gradient-jet);
+  border-radius: 15px;
+  padding: 24px;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-3);
+}
+
+.project-card-title {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  color: var(--white-2);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+/* Tech Stack Badges */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  transition: var(--transition-1);
+}
+
+.tech-badge:hover {
+  border-color: var(--orange-yellow-crayola);
+  color: var(--orange-yellow-crayola);
+}
+
+.tech-badge img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.project-card-desc {
+  font-size: var(--fs-6);
+  color: var(--light-gray);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-weight: var(--fw-300);
+}
+
+.project-card-links {
+  display: flex;
+  gap: 16px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  transition: var(--transition-1);
+}
+
+.project-link:hover {
+  color: var(--white-2);
+  transform: translateX(3px);
+}
+
+.project-link ion-icon {
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .project-cards-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-cards-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Light mode */
+[data-theme="light"] .tech-filter-pill {
+  background: var(--eerie-black-1);
+  border-color: var(--jet);
+  color: var(--light-gray);
+}
+
+[data-theme="light"] .tech-filter-pill:hover {
+  border-color: var(--orange-yellow-crayola);
+  color: var(--orange-yellow-crayola);
+}
+
+[data-theme="light"] .tech-filter-pill.active {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  border-color: var(--orange-yellow-crayola);
+}
+
+[data-theme="light"] .tech-badge {
+  background: var(--eerie-black-1);
+  border-color: var(--jet);
+  color: var(--light-gray);
+}
+
+[data-theme="light"] .project-card-content {
+  background: var(--bg-gradient-jet);
+}
+
+[data-theme="light"] .project-card-desc {
+  color: var(--light-gray);
+}
+
+[data-theme="light"] .project-card-title {
+  color: var(--white-2);
+}
+
+/* No results message */
+.no-projects-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--light-gray-70);
+  font-size: var(--fs-5);
+  grid-column: 1 / -1;
 }
