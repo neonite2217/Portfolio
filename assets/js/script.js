@@ -608,7 +608,7 @@ function filterProjectsByTech(tech) {
     if (projectsList) {
       const msg = document.createElement('li');
       msg.className = 'no-projects-message';
-      msg.innerHTML = 'No projects found with this technology. <a href="https://github.com/neonite2217?tab=repositories" target="_blank" style="color: var(--orange-yellow-crayola);">Check GitHub for more &rarr;</a>';
+      msg.innerHTML = 'No projects found with this technology. <a href="https://github.com/neonite-rc?tab=repositories" target="_blank" style="color: var(--orange-yellow-crayola);">Check GitHub for more &rarr;</a>';
       projectsList.appendChild(msg);
     }
   }
